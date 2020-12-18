@@ -203,6 +203,60 @@ describe("dvb.findPOI", () => {
   });
 });
 
+describe("dvb.findNearbyStops", () => {
+  describe('dvb.findNearbyStops "Postplatz"', () => {
+    it("should return station when input matches a station name", () =>
+      dvb.findNearbyStops("Postplatz").then((data) => {
+        assert.strictEqual("Postplatz", data[0].name);
+      }));
+  });
+
+  describe('dvb.findNearbyStops "Address"', () => {
+    it("should return an array", () =>
+      dvb.findNearbyStops("Sternstraße 15 Dresden").then((data) => {
+        assert.isNotEmpty(data);
+      }));
+
+    it("should contain objects with name, city, coords and type", () =>
+      dvb.findNearbyStops("Sternstraße 15 Dresden").then((data) => {
+        assert.isNotEmpty(data);
+        data.forEach((point) => {
+          assertPoint(point);
+          assert.strictEqual(point.type, dvb.POI_TYPE.Stop);
+        });
+      }));
+
+    it("should find nearby stops for address (1)", () =>
+      dvb.findNearbyStops("Sternstraße 15 Dresden").then((data) => {
+        assert.strictEqual("Mickten", data[0].name);
+        assert.strictEqual("Trachauer Straße", data[1].name);
+        assert.strictEqual("Altpieschen", data[2].name);
+      }));
+
+    it("should find nearby stops for address (2)", () =>
+      dvb.findNearbyStops("Kreuzstraße Dresden").then((data) => {
+        assert.strictEqual("Altmarkt", data[0].name);
+        assert.strictEqual("Prager Straße", data[1].name);
+        assert.strictEqual("Pirnaischer Platz", data[2].name);
+      }));
+  });
+
+  describe("dvb.findNearbyStops 0", () => {
+    it("should reject with ValidationError", () =>
+      assert.isRejected(
+        (dvb as any).findNearbyStops(0),
+        "query has to be a string"
+      ));
+  });
+
+  describe('dvb.findNearbyStops "qqq"', () => {
+    it("should return an empty array", () =>
+      dvb.findNearbyStops("qqq").then((data) => {
+        assert.isEmpty(data);
+      }));
+  });
+});
+
 describe("dvb.pins", () => {
   describe('dvb.pins "13.713899, 51.026578, 13.939144, 51.093821, stop"', () => {
     it("should contain objects with id, name, coords and connections", () =>
