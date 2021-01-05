@@ -64,7 +64,7 @@
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "proj4": "^2.6.3"
   },
   "devDependencies": {
