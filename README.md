@@ -86,14 +86,14 @@ dvb.monitor(stopID, timeOffset, numResults).then((data) => {
 ```yml
 [
   {
-    arrivalTime: 2019-10-07T21:04:00.000Z,
-    scheduledTime: 2019-10-07T21:04:00.000Z,
-    id: 'voe:11001: :R:j19',
-    line: '1',
-    direction: 'Prohlis',
-    platform: { name: '1', type: 'Platform' },
-    arrivalTimeRelative: 4,
-    scheduledTimeRelative: 4,
+    arrivalTime: 2020-08-28T17:47:00.000Z,
+    scheduledTime: 2020-08-28T17:47:00.000Z,
+    id: 'voe:11012: :R:j20',
+    line: '12',
+    direction: 'Striesen',
+    platform: { name: '3', type: 'Platform' },
+    arrivalTimeRelative: 5,
+    scheduledTimeRelative: 5,
     delayTime: 0,
     state: 'InTime',
     mode: {
@@ -101,17 +101,17 @@ dvb.monitor(stopID, timeOffset, numResults).then((data) => {
       name: 'Tram',
       iconUrl: 'https://www.dvb.de/assets/img/trans-icon/transport-tram.svg'
     },
-    diva: { number: 11001, network: 'voe' }
+    diva: { number: 11012, network: 'voe' }
   },
   {
-    arrivalTime: 2019-10-07T21:15:00.000Z,
-    scheduledTime: 2019-10-07T21:15:00.000Z,
-    id: 'voe:11002: :R:j19',
+    arrivalTime: 2020-08-28T17:48:00.000Z,
+    scheduledTime: 2020-08-28T17:48:00.000Z,
+    id: 'voe:11002: :H:j20',
     line: '2',
-    direction: 'Kleinzschachwitz',
-    platform: { name: '1', type: 'Platform' },
-    arrivalTimeRelative: 15,
-    scheduledTimeRelative: 15,
+    direction: 'Gorbitz',
+    platform: { name: '2', type: 'Platform' },
+    arrivalTimeRelative: 6,
+    scheduledTimeRelative: 6,
     delayTime: 0,
     state: 'InTime',
     mode: {
@@ -154,7 +154,7 @@ dvb.route(origin, destination, startTime, isArrivalTime).then((data) => {
     id: '33000037',
     name: 'Postplatz',
     city: 'Dresden',
-    coords: [ 13.733966669186017, 51.05081442107084 ]
+    coords: [ 13.733543221907427, 51.05055101347277 ]
   },
   trips: [
     {
@@ -166,95 +166,96 @@ dvb.route(origin, destination, startTime, isArrivalTime).then((data) => {
               name: 'Helmholtzstraße',
               city: 'Dresden',
               type: 'Stop',
-              platform: undefined,
+              platform: { name: '1', type: 'Platform' },
               coords: [ 13.725468471273134, 51.0255443264448 ],
-              arrival: 2019-10-07T21:12:00.000Z,
-              departure: 2019-10-07T21:12:00.000Z
+              arrival: 2020-08-28T18:05:00.000Z,
+              departure: 2020-08-28T18:05:00.000Z
             },
             {
-              id: '33000135',
-              name: 'Plauen Nöthnitzer Straße',
+              id: '33000512',
+              name: 'Stadtgutstraße',
               city: 'Dresden',
               type: 'Stop',
               platform: { name: '1', type: 'Platform' },
-              coords: [ 13.716492082528102, 51.02796893475141 ],
-              arrival: 2019-10-07T21:24:00.000Z,
-              departure: 2019-10-07T21:24:00.000Z
-            }
+              coords: [ 13.736249024095288, 51.02412604112871 ],
+              arrival: 2020-08-28T18:07:00.000Z,
+              departure: 2020-08-28T18:07:00.000Z
+            },
+            ... 1 more item
           ],
           departure: {
             id: '33000742',
             name: 'Helmholtzstraße',
             city: 'Dresden',
-            platform: undefined,
-            time: 2019-10-07T21:12:00.000Z,
+            platform: { name: '1', type: 'Platform' },
+            time: 2020-08-28T18:05:00.000Z,
             coords: [ 13.725468471273134, 51.0255443264448 ],
             type: 'Stop'
           },
           arrival: {
-            id: '33000135',
-            name: 'Plauen Nöthnitzer Straße',
+            id: '33000313',
+            name: 'Räcknitzhöhe',
             city: 'Dresden',
             platform: { name: '1', type: 'Platform' },
-            time: 2019-10-07T21:24:00.000Z,
-            coords: [ 13.716492082528102, 51.02796893475141 ],
+            time: 2020-08-28T18:08:00.000Z,
+            coords: [ 13.742469696952984, 51.02352100754019 ],
             type: 'Stop'
           },
           mode: {
-            title: 'Fussweg',
-            name: 'Footpath',
-            iconUrl: 'https://m.dvb.de/img/walk.svg'
+            title: 'Bus',
+            name: 'CityBus',
+            iconUrl: 'https://www.dvb.de/assets/img/trans-icon/transport-bus.svg'
           },
-          line: 'Fussweg',
-          direction: '',
-          diva: undefined,
-          duration: 12,
+          line: '85',
+          direction: 'Striesen',
+          diva: { number: 21085, network: 'voe' },
+          duration: 3,
           path: [
-            [ 13.725468471273134, 51.0255443264448 ],
-            [ 13.725454558079187, 51.025553521653286 ],
-            ... 47 more items
+            [ 13.725453890767993, 51.025535552078374 ],
+            [ 13.725722912293, 51.02548662985169 ],
+            ... 18 more items
           ]
         },
         {
           stops: [
             {
-              id: '33000135',
-              name: 'Plauen Nöthnitzer Straße',
+              id: '33000313',
+              name: 'Räcknitzhöhe',
               city: 'Dresden',
               type: 'Stop',
               platform: { name: '1', type: 'Platform' },
-              coords: [ 13.716492082528102, 51.02796893475141 ],
-              arrival: 2019-10-07T21:24:00.000Z,
-              departure: 2019-10-07T21:24:00.000Z
+              coords: [ 13.742469696952984, 51.02352100754019 ],
+              arrival: 2020-08-28T18:13:00.000Z,
+              departure: 2020-08-28T18:13:00.000Z
             },
             {
-              id: '33000134',
-              name: 'Münchner Platz',
+              id: '33000312',
+              name: 'Zellescher Weg',
               city: 'Dresden',
               type: 'Stop',
               platform: { name: '1', type: 'Platform' },
-              coords: [ 13.721883037345886, 51.02995723597058 ],
-              arrival: 2019-10-07T21:25:00.000Z,
-              departure: 2019-10-07T21:25:00.000Z
+              coords: [ 13.7457515521668, 51.02816465242123 ],
+              arrival: 2020-08-28T18:15:00.000Z,
+              departure: 2020-08-28T18:15:00.000Z
             },
-            ... 6 more items
+            ... 8 more items
           ],
           departure: {
-            id: '33000135',
-            name: 'Plauen Nöthnitzer Straße',
+            id: '33000313',
+            name: 'Räcknitzhöhe',
             city: 'Dresden',
             platform: { name: '1', type: 'Platform' },
-            time: 2019-10-07T21:24:00.000Z,
-            coords: [ 13.716492082528102, 51.02796893475141 ],
+            time: 2020-08-28T18:13:00.000Z,
+            coords: [ 13.742469696952984, 51.02352100754019 ],
             type: 'Stop'
           },
           arrival: {
-            id: '33000005',
-            name: 'Pirnaischer Platz',
+            id: '33000037',
+            name: 'Postplatz',
             city: 'Dresden',
             platform: { name: '4', type: 'Platform' },
-            time: 2019-10-07T21:33:00.000Z,
-            coords: [ 13.743735436306865, 51.04888908670104 ],
+            time: 2020-08-28T18:28:00.000Z,
+            coords: [ 13.733543221907427, 51.05055101347277 ],
             type: 'Stop'
           },
           mode: {
@@ -262,24 +263,23 @@ dvb.route(origin, destination, startTime, isArrivalTime).then((data) => {
             name: 'Tram',
             iconUrl: 'https://www.dvb.de/assets/img/trans-icon/transport-tram.svg'
           },
-          line: '3',
-          direction: 'Bf. Neustadt',
-          diva: { number: 11003, network: 'voe' },
-          duration: 9,
+          line: '11',
+          direction: 'Bühlau',
+          diva: { number: 11011, network: 'voe' },
+          duration: 15,
           path: [
-            [ 13.71646358720785, 51.02796935341722 ],
-            [ 13.71649241447995, 51.02797791957738 ],
-            ... 56 more items
+            [ 13.742470033873689, 51.023529992249884 ],
+            [ 13.742485627673174, 51.023565718598725 ],
+            ... 122 more items
           ]
-        },
-        ... 2 more items
+        }
       ],
       departure: {
         id: '33000742',
         name: 'Helmholtzstraße',
         city: 'Dresden',
-        platform: undefined,
-        time: 2019-10-07T21:12:00.000Z,
+        platform: { name: '1', type: 'Platform' },
+        time: 2020-08-28T18:05:00.000Z,
         coords: [ 13.725468471273134, 51.0255443264448 ],
         type: 'Stop'
       },
@@ -287,12 +287,12 @@ dvb.route(origin, destination, startTime, isArrivalTime).then((data) => {
         id: '33000037',
         name: 'Postplatz',
         city: 'Dresden',
-        platform: { name: '2', type: 'Platform' },
-        time: 2019-10-07T21:39:00.000Z,
-        coords: [ 13.733966669186017, 51.05081442107084 ],
+        platform: { name: '4', type: 'Platform' },
+        time: 2020-08-28T18:28:00.000Z,
+        coords: [ 13.733543221907427, 51.05055101347277 ],
         type: 'Stop'
       },
-      duration: 27,
+      duration: 23,
       interchanges: 1
     },
     {
@@ -304,28 +304,29 @@ dvb.route(origin, destination, startTime, isArrivalTime).then((data) => {
               name: 'Helmholtzstraße',
               city: 'Dresden',
               type: 'Stop',
-              platform: undefined,
+              platform: { name: '2', type: 'Platform' },
               coords: [ 13.725468471273134, 51.0255443264448 ],
-              arrival: 2019-10-07T21:23:00.000Z,
-              departure: 2019-10-07T21:23:00.000Z
+              arrival: 2020-08-28T18:09:00.000Z,
+              departure: 2020-08-28T18:09:00.000Z
             },
             {
-              id: '33000135',
-              name: 'Plauen Nöthnitzer Straße',
+              id: '33000513',
+              name: 'Regensburger Straße',
               city: 'Dresden',
               type: 'Stop',
-              platform: { name: '1', type: 'Platform' },
-              coords: [ 13.716492082528102, 51.02796893475141 ],
-              arrival: 2019-10-07T21:35:00.000Z,
-              departure: 2019-10-07T21:35:00.000Z
-            }
+              platform: { name: '2', type: 'Platform' },
+              coords: [ 13.720554082747958, 51.02640790159258 ],
+              arrival: 2020-08-28T18:10:00.000Z,
+              departure: 2020-08-28T18:10:00.000Z
+            },
+            ... 1 more item
           ],
           departure: {
             id: '33000742',
             name: 'Helmholtzstraße',
             city: 'Dresden',
-            platform: undefined,
-            time: 2019-10-07T21:23:00.000Z,
+            platform: { name: '2', type: 'Platform' },
+            time: 2020-08-28T18:09:00.000Z,
             coords: [ 13.725468471273134, 51.0255443264448 ],
             type: 'Stop'
           },
@@ -333,91 +334,53 @@ dvb.route(origin, destination, startTime, isArrivalTime).then((data) => {
             id: '33000135',
             name: 'Plauen Nöthnitzer Straße',
             city: 'Dresden',
-            platform: { name: '1', type: 'Platform' },
-            time: 2019-10-07T21:35:00.000Z,
-            coords: [ 13.716492082528102, 51.02796893475141 ],
+            platform: { name: '6', type: 'Platform' },
+            time: 2020-08-28T18:10:00.000Z,
+            coords: [ 13.716530789023206, 51.02708737506858 ],
             type: 'Stop'
           },
+          mode: {
+            title: 'Bus',
+            name: 'CityBus',
+            iconUrl: 'https://www.dvb.de/assets/img/trans-icon/transport-bus.svg'
+          },
+          line: '85',
+          direction: 'Löbtau Süd',
+          diva: { number: 21085, network: 'voe' },
+          duration: 1,
+          path: [
+            [ 13.725453890767993, 51.025535552078374 ],
+            [ 13.72528426308308, 51.02557401614769 ],
+            ... 9 more items
+          ]
+        },
+        {
+          stops: [],
+          departure: undefined,
+          arrival: undefined,
           mode: {
             title: 'Fussweg',
             name: 'Footpath',
             iconUrl: 'https://m.dvb.de/img/walk.svg'
           },
-          line: 'Fussweg',
+          line: '',
           direction: '',
           diva: undefined,
-          duration: 12,
+          duration: 2,
           path: [
-            [ 13.725468471273134, 51.0255443264448 ],
-            [ 13.725454558079187, 51.025553521653286 ],
-            ... 47 more items
+            [ 13.716530789023206, 51.02708737506858 ],
+            [ 13.716516209687736, 51.02707859957728 ],
+            ... 14 more items
           ]
         },
-        {
-          stops: [
-            {
-              id: '33000135',
-              name: 'Plauen Nöthnitzer Straße',
-              city: 'Dresden',
-              type: 'Stop',
-              platform: { name: '1', type: 'Platform' },
-              coords: [ 13.716492082528102, 51.02796893475141 ],
-              arrival: 2019-10-07T21:35:00.000Z,
-              departure: 2019-10-07T21:35:00.000Z
-            },
-            {
-              id: '33000134',
-              name: 'Münchner Platz',
-              city: 'Dresden',
-              type: 'Stop',
-              platform: { name: '1', type: 'Platform' },
-              coords: [ 13.721883037345886, 51.02995723597058 ],
-              arrival: 2019-10-07T21:36:00.000Z,
-              departure: 2019-10-07T21:36:00.000Z
-            },
-            ... 6 more items
-          ],
-          departure: {
-            id: '33000135',
-            name: 'Plauen Nöthnitzer Straße',
-            city: 'Dresden',
-            platform: { name: '1', type: 'Platform' },
-            time: 2019-10-07T21:35:00.000Z,
-            coords: [ 13.716492082528102, 51.02796893475141 ],
-            type: 'Stop'
-          },
-          arrival: {
-            id: '33000005',
-            name: 'Pirnaischer Platz',
-            city: 'Dresden',
-            platform: { name: '4', type: 'Platform' },
-            time: 2019-10-07T21:44:00.000Z,
-            coords: [ 13.743735436306865, 51.04888908670104 ],
-            type: 'Stop'
-          },
-          mode: {
-            title: 'Straßenbahn',
-            name: 'Tram',
-            iconUrl: 'https://www.dvb.de/assets/img/trans-icon/transport-tram.svg'
-          },
-          line: '3',
-          direction: 'Wilder Mann',
-          diva: { number: 11003, network: 'voe' },
-          duration: 9,
-          path: [
-            [ 13.71646358720785, 51.02796935341722 ],
-            [ 13.71649241447995, 51.02797791957738 ],
-            ... 56 more items
-          ]
-        },
-        ... 2 more items
+        ... 3 more items
       ],
       departure: {
         id: '33000742',
         name: 'Helmholtzstraße',
         city: 'Dresden',
-        platform: undefined,
-        time: 2019-10-07T21:23:00.000Z,
+        platform: { name: '2', type: 'Platform' },
+        time: 2020-08-28T18:09:00.000Z,
         coords: [ 13.725468471273134, 51.0255443264448 ],
         type: 'Stop'
       },
@@ -426,12 +389,12 @@ dvb.route(origin, destination, startTime, isArrivalTime).then((data) => {
         name: 'Postplatz',
         city: 'Dresden',
         platform: { name: '2', type: 'Platform' },
-        time: 2019-10-07T21:53:00.000Z,
+        time: 2020-08-28T18:39:00.000Z,
         coords: [ 13.733966669186017, 51.05081442107084 ],
         type: 'Stop'
       },
       duration: 30,
-      interchanges: 1
+      interchanges: 2
     },
     ... 2 more items
   ]
@@ -638,18 +601,19 @@ Promise<[IPin][InterfaceDeclaration-5][]>
 Query the server for possible routes from one stop to another.
 
 ```typescript
-function route(originID: string, destinationID: string, time: Date = new Date(), isArrivalTime: boolean = true, timeout: number = 15000): Promise<IRoute>;
+function route(originID: string, destinationID: string, time: Date = new Date(), isArrivalTime: boolean = true, timeout: number = 15000, via?: string): Promise<IRoute>;
 ```
 
 **Parameters**
 
-| Name          | Type    | Default value | Description                    |
-| ------------- | ------- | ------------- | ------------------------------ |
-| originID      | string  |               | the id of the origin stop      |
-| destinationID | string  |               | the id of the destination stop |
-| time          | Date    | new Date()    | starting at what time          |
-| isArrivalTime | boolean | true          | is time the arrival time       |
-| timeout       | number  | 15000         | the timeout of the request     |
+| Name          | Type                    | Default value | Description                    |
+| ------------- | ----------------------- | ------------- | ------------------------------ |
+| originID      | string                  |               | the id of the origin stop      |
+| destinationID | string                  |               | the id of the destination stop |
+| time          | Date                    | new Date()    | starting at what time          |
+| isArrivalTime | boolean                 | true          | is time the arrival time       |
+| timeout       | number                  | 15000         | the timeout of the request     |
+| via           | string  |               |                                |
 
 **Return type**
 

@@ -8,3 +8,5 @@ docs/
 npm-debug.log
 yarn-error.log
 tsconfig.tsbuildinfo
+
+.DS_Store

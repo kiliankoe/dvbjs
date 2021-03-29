@@ -4,6 +4,7 @@ import axios from "axios";
 import chai, { assert } from "chai";
 import chaiAsPromised from "chai-as-promised";
 import * as dvb from "../src/index";
+import { IRoute, IStop } from "../src/index";
 import {
   assertAddress,
   assertCoords,
@@ -111,6 +112,48 @@ describe("dvb.route", () => {
         });
         assert.notEqual(0, durationSum);
       });
+    });
+  });
+  describe('dvb.route "33000742 (Helmholtzstraße) --> via: 33000016 (Bahnhof Neustadt) --> 33000037 (Postplatz)"', () => {
+    let data: dvb.IRoute;
+
+    before(async () => {
+      data = await dvb.route(
+        "33000742",
+        "33000037",
+        new Date(),
+        false,
+        undefined,
+        "33000016"
+      );
+      assert.isObject(data);
+    });
+
+    it("should include the via stop in all trips ", () => {
+      const getStopsFromTripByID = (
+        route: IRoute,
+        stopId: string
+      ): IStop[][] => {
+        const filteredTrips: IStop[][] = [];
+        route.trips.forEach((trip) => {
+          const stopsPerTrip: IStop[] = [];
+          trip.nodes.forEach((node) => {
+            const filteredStops = node.stops.find((stop) => {
+              return stop.id === stopId;
+            });
+            if (filteredStops) {
+              stopsPerTrip.push(filteredStops);
+            }
+          });
+          filteredTrips.push(stopsPerTrip);
+        });
+        return filteredTrips;
+      };
+
+      getStopsFromTripByID(data, "33000016").forEach((filteredTripByID) => {
+        assert.isNotEmpty(filteredTripByID);
+      });
+      assert.isNotEmpty(data);
     });
   });
 
